@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me - Data Scientist</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      color: #fff;
+      line-height: 1.6;
+      background: linear-gradient(-45deg, #1e3c72, #2a5298, #0f2027, #203a43);
+      background-size: 400% 400%;
+      animation: backgroundShift 12s ease infinite;
+    }
+
+    @keyframes backgroundShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      animation: fadeIn 2s ease;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      animation: slideDown 1.5s ease;
+    }
+
+    header h1 {
+      font-size: 42px;
+      color: #fff;
+      text-shadow: 0 0 8px #00f0ff, 0 0 12px #ff0080;
+    }
+
+    header p {
+      font-size: 20px;
+      color: #dcdcdc;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 40px;
+      align-items: center;
+      margin-bottom: 60px;
+      animation: slideRight 1.5s ease;
+    }
+
+    .about img {
+      width: 100%;
+      border-radius: 50%;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6), 0 0 30px #00f0ff;
+    }
+
+    .about-content h2 {
+      font-size: 30px;
+      margin-bottom: 15px;
+      color: #00f0ff;
+      text-shadow: 0 0 8px #00f0ff;
+    }
+
+    .about-content p {
+      margin-bottom: 15px;
+      font-size: 17px;
+      color: #e0e0e0;
+    }
+
+    .skills {
+      margin-bottom: 60px;
+      animation: slideLeft 1.5s ease;
+    }
+
+    .skills h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #ff0080;
+      text-align: center;
+      text-shadow: 0 0 8px #ff0080;
+    }
+
+    .skill {
+      margin-bottom: 20px;
+    }
+
+    .skill-name {
+      font-size: 16px;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #fff;
+    }
+
+    .skill-bar {
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      height: 14px;
+      position: relative;
+    }
+
+    .skill-progress {
+      height: 100%;
+      border-radius: 10px;
+      background: linear-gradient(90deg, #ff0080, #00f0ff);
+      width: 0;
+      animation: grow 2s ease forwards;
+      box-shadow: 0 0 10px #00f0ff;
+    }
+
+    @keyframes grow {
+      from { width: 0; }
+      to { width: var(--skill-level); }
+    }
+
+    .experience {
+      margin-bottom: 60px;
+      animation: fadeUp 1.8s ease;
+    }
+
+    .experience h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #00f0ff;
+      text-align: center;
+      text-shadow: 0 0 8px #00f0ff;
+    }
+
+    .timeline {
+      border-left: 3px solid #ff0080;
+      padding-left: 20px;
+    }
+
+    .timeline-item {
+      margin-bottom: 25px;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -11px;
+      top: 5px;
+      width: 12px;
+      height: 12px;
+      background: #00f0ff;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #00f0ff;
+    }
+
+    .timeline-item h3 {
+      font-size: 20px;
+      margin-bottom: 5px;
+      color: #fff;
+    }
+
+    .timeline-item span {
+      font-size: 14px;
+      color: #bbb;
+    }
+
+    .timeline-item p {
+      font-size: 15px;
+      margin-top: 8px;
+      color: #ddd;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #111;
+      color: #eee;
+      animation: fadeIn 2s ease;
+    }
+
+    footer a {
+      color: #2afadf;
+      text-decoration: none;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes slideRight {
+      from { transform: translateX(-60px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes slideLeft {
+      from { transform: translateX(60px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes fadeUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @media (max-width: 768px) {
+      .about {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .about img {
+        max-width: 220px;
+        margin: 0 auto 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>About Me</h1>
+      <p>Data Scientist | Machine Learning Enthusiast | Front-end Developer</p>
+    </header>
+
+    <section class="about">
+      <img src="fardeenkhan.png" alt="Profile Picture">
+      <div class="about-content">
+        <h2>Hello, I'm Fardeen Khan</h2>
+        <p>
+          I am a passionate Data Scientist with expertise in Machine Learning, Deep Learning, and AI-driven solutions. 
+          I love turning raw data into actionable insights and building predictive models that solve real-world problems.
+        </p>
+        <p>
+          With a background in Computer Science and Mathematics, I specialize in Python, TensorFlow, Scikit-learn, 
+          and Natural Language Processing.
+        </p>
+      </div>
+    </section>
+
+    <section class="skills">
+      <h2>Core Skills</h2>
+      <div class="skill">
+        <div class="skill-name">Python </div>
+        <div class="skill-bar">
+          <div class="skill-progress" style="--skill-level: 95%;"></div>
+        </div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">Machine Learning</div>
+        <div class="skill-bar">
+          <div class="skill-progress" style="--skill-level: 90%;"></div>
+        </div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">Deep Learning</div>
+        <div class="skill-bar">
+          <div class="skill-progress" style="--skill-level: 85%;"></div>
+        </div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">Data Visualization</div>
+        <div class="skill-bar">
+          <div class="skill-progress" style="--skill-level: 80%;"></div>
+        </div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">Natural Language Processing (NLP)</div>
+        <div class="skill-bar">
+          <div class="skill-progress" style="--skill-level: 75%;"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience">
+      <h2>Internships</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>Artificial Intelligence and Data Analytics Intern - Edunet Foundation</h3>
+          <span>Dec 2024 - Jan 2025</span>
+          <p>Developed ML models for heart disease prediction, achieving 92% accuracy.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>AIML and Data Science Intern - Ybi Foundation</h3>
+          <span>Mar 2025 - May 2025</span>
+          <p>Worked on NLP projects, including sentiment analysis.</p>
+        </div>
+      </div>
+    </section>
+
+        <section class="experience">
+      <h2>Certificates</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3><a style="color: white; text-decoration: none;" href="https://www.linkedin.com/posts/fardeen-khan-86a6412b0_certificate-of-completion-activity-7244654719015518208-xvpf?utm_source=share&utm_medium=member_desktop&rcm=ACoAAErYV5IB6dOb8qm5xFy-k_CGpjWGOzmiA6A">Career Essential in Data Analysis - Microsoft and LinkedIn</a></h3>
+          <span>Sep 2024</span>
+        </div>
+        <div class="timeline-item">
+          <h3><a style="color: white; text-decoration: none;" href="">Fundamental AI and Data Skills - Ybi Foundation</a></h3>
+          <span>Feb 2024</span>
+        </div>
+      </div>
+    </section>
+  </div>
+    <footer>
+    <p>Want to collaborate? Reach me at <a href="mailto:example@email.com">fardeenalikhan85@gmail.com</a></p>
+  </footer>
+</body>
+</html>
